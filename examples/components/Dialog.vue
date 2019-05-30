@@ -1,8 +1,8 @@
 <template>
   <div>
-    <button @click="toggleDialog()">显示dialog</button>
+
     <transition name="fade">
-      <div class="ego-overlay" v-if="showDialog">
+      <div class="ego-overlay">
         <div class="ego-dialog">
           <div class="ego-dialog__header" v-if="title">{{title}}</div>
           <div class="ego-dialog__content">{{content}}</div>
@@ -38,27 +38,21 @@ export default {
     toggleDialog () {
       this.showDialog = !this.showDialog
     }
+  },
+  mounted () {
+    console.log(this.vvv)
   }
 }
 </script>
 <style lang="scss" scoped>
-.fade-enter-active {
-  opacity: 0.5;
-  transition: all .3s linear;
+.fade-enter {
+  opacity: 0;
+  transform: translate3d(-50%, -50%, 0) scale(0.7);
 }
 .fade-leave-active {
-  opacity: 0.5;
-  transition: all .3s linear;
+  opacity: 0;
+  transform: translate3d(-50%, -50%, 0) scale(0.9);
 }
-
-// .fade-enter-enter {
-//   transform: translate3d(-50%, -50%, 0) scale(0.7);
-//   opacity: 0;
-// }
-// .fade-leave-active {
-//   transform: translate3d(-50%, -50%, 0) scale(0.9);
-//   opacity: 0.5;
-// }
 
 .ego-overlay{
     position: fixed;
