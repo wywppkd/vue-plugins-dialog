@@ -14,6 +14,9 @@ export default {
   components: {
     // HelloWorld,
     // 'dia-log': Dialog
+  },
+  mounted(){
+    this.$dialog.alert()
   }
 }
 </script>
