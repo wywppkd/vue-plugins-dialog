@@ -1,14 +1,13 @@
 <template>
   <div>
-
     <transition name="fade">
-      <div class="ego-overlay">
+      <div class="ego-overlay" v-if="show">
         <div class="ego-dialog">
           <div class="ego-dialog__header" v-if="title">{{title}}</div>
           <div class="ego-dialog__content">{{content}}</div>
           <div class="ego-dialog__footer">
-            <button class="ego-dialog__cancel" v-if="dialogType == 'confirm'">{{cancelButtonText}}</button>
-            <button class="ego-dialog__confirm">{{confirmButtonText}}</button>
+            <button class="ego-dialog__cancel" v-if="showCancelButton" @click="handleAction('cancel')">{{cancelButtonText || '取消'}}</button>
+            <button class="ego-dialog__confirm" @click="handleAction('confirm')">{{confirmButtonText || '确认'}}</button>
           </div>
         </div>
       </div>
@@ -19,28 +18,23 @@
 export default {
   name: 'ego-dialog',
   props: {
-    title: String,
-    content: String,
-    confirmButtonText: {
-      default: '确认'
-    },
-    cancelButtonText: {
-      default: '取消'
-    }
+    title: [String, Number],
+    content: [String, Number],
+    confirmButtonText: String,
+    cancelButtonText: String,
+    showCancelButton: Boolean,
+    callback: Function
   },
   data () {
     return {
-      dialogType: '',
-      showDialog: false
+      show: false
     }
   },
   methods: {
-    toggleDialog () {
-      this.showDialog = !this.showDialog
+    handleAction (action) {
+      this.show = false
+      this.callback(action)
     }
-  },
-  mounted () {
-    console.log(this.vvv)
   }
 }
 </script>
@@ -76,29 +70,35 @@ export default {
   color: #323233;
   &__header{
     padding-top: 25px;
-    font-weight: 500;
+    font-weight: 700;
   }
   &__content{
     padding: 15px;
+    font-size: 12px;
   }
   &__footer{
     display: flex;
     button,
-    button:visited,
-    button:active,
-    button:hover{
+    button:focus{
       flex:1;
       height: 50px;
       line-height: 48px;
       border: 0.5px solid #ddd;
       background-color: #fff;
+      font-size: 16px;
+      outline: none;
+      user-select: none;
+      overflow: hidden;
+    }
+    button:active{
+      background-color: #e6e6e6;
     }
   }
   &__cancel{
     color: #999;
   }
   &__confirm{
-    color:#348ee5;
+    color:#2886d7;
   }
 }
 </style>
