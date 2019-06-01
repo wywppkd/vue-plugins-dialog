@@ -1,30 +1,44 @@
 <template>
   <div>
-    <applyStations :applyStations="applyStations" v-if="applyStations.length" @hiddenStations = "hiddenStations"></applyStations>
-    <button @click="showStations">使用油站</button>
+    <button @click="myConfirm">确认订单</button>
+    <br>
+    <button @click="myAlert">支付</button>
   </div>
 </template>
 
 <script>
 export default {
+  name:'HelloWorld',
   data () {
     return {
-      color: '#ff0000',
-      applyStations: []
     }
   },
   methods: {
-    hiddenStations () {
-      this.applyStations = []
+    // 调用alert弹框
+    myAlert () {
+      this.$dialog.alert({
+        title: '支付失败',
+        content: '请重试',
+        confirmButtonText: '我知道了',
+        confirmButtonColor: 'red'
+      }).then(() => {
+        console.log('您点击了确定')
+      })
     },
-    showStations () {
-      this.applyStations = [
-        { city: '太原市', address: ['太原市杏花岭区建设北路76号', '太原市杏花岭区建设北路76号'] },
-        { city: '太原市', address: ['太原市杏花岭区建设北路76号', '太原市杏花岭区建设北路76号'] },
-        { city: '太原市', address: ['太原市杏花岭区建设北路76号', '太原市杏花岭区建设北路76号'] },
-        { city: '太原市', address: ['太原市杏花岭区建设北路76号', '太原市杏花岭区建设北路76号', '太原市杏花岭区建设北路76号', '太原市杏花岭区建设北路76号'] },
-        { city: '北京市', address: ['北京市杏花岭区建设北路76号', '北京市杏花岭区建设北路76号'] }
-      ]
+    // 调用confirm弹框
+    myConfirm () {
+      this.$dialog.confirm({
+        title: '你确定吗？你确定吗？你确定吗？',
+        content: '再好好想想哦!',
+        confirmButtonText: '我确定',   // 默认'确定'
+        confirmButtonColor: '#333',    //默认'#2886d7'
+        cancelButtonColor: '我取消',   // 默认'取消'
+        cancelButtonColor: 'red'       //默认'#999'
+      }).then(() => {
+        console.log('确定')
+      }).catch(() => {
+        console.log('取消')
+      })
     }
   }
 }

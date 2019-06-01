@@ -2,10 +2,10 @@ import Vue from 'vue'
 import App from './App.vue'
 
 // 导入组件库
-import Ego from './../packages/index'
+import EgoDialog from './../packages/index'
 
 // 注册组件库
-Vue.use(Ego)
+Vue.use(EgoDialog)
 
 Vue.prototype.$dialog.setDefaultOptions({
   confirmButtonText: '修改按钮默认文字'

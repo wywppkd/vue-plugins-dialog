@@ -6,8 +6,8 @@
           <div class="ego-dialog__header" v-if="title">{{title}}</div>
           <div class="ego-dialog__content">{{content}}</div>
           <div class="ego-dialog__footer">
-            <button class="ego-dialog__cancel" v-if="showCancelButton" @click="handleAction('cancel')">{{cancelButtonText || '取消'}}</button>
-            <button class="ego-dialog__confirm" @click="handleAction('confirm')">{{confirmButtonText || '确认'}}</button>
+            <button class="ego-dialog__cancel" v-if="showCancelButton" @click="handleAction('cancel')" :style="{color:cancelButtonColor}">{{cancelButtonText || '取消'}}</button>
+            <button class="ego-dialog__confirm" @click="handleAction('confirm')" :style="{color:confirmButtonColor}">{{confirmButtonText || '确定'}}</button>
           </div>
         </div>
       </div>
@@ -21,7 +21,9 @@ export default {
     title: [String, Number],
     content: [String, Number],
     confirmButtonText: String,
+    confirmButtonColor: String,
     cancelButtonText: String,
+    cancelButtonColor: String,
     showCancelButton: Boolean,
     callback: Function
   },
@@ -32,7 +34,13 @@ export default {
   },
   methods: {
     handleAction (action) {
+      // 隐藏dom
       this.show = false
+      // 移除dom
+      this.$el.remove()
+      // 销毁实例
+      this.$destroy()
+      // 回调函数
       this.callback(action)
     }
   }

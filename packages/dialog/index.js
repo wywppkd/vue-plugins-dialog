@@ -9,7 +9,9 @@ function initInstance () {
   //   instance.$destroy()
   // }
 
+  // Vue.extend(EgoDialog) => 创建一个EgoDialog子实例
   instance = new (Vue.extend(EgoDialog))({
+    // 将EgoDialog挂载到新建的div上
     el: document.createElement('div')
   })
 }
@@ -18,7 +20,7 @@ function initInstance () {
 Dialog.defaultOptions = {
   title: '',
   content: '',
-  confirmButtonText: '确认',
+  confirmButtonText: '确定',
   cancelButtonText: '取消',
   showCancelButton: false,
   callback: action => {
@@ -36,7 +38,7 @@ function Dialog (options) {
       reject
     })
 
-    // 将dom渲染到body中
+    // 添加到body中
     document.body.appendChild(instance.$el)
 
     // DOM渲染完成后，再显示组件
@@ -68,10 +70,10 @@ Dialog.resetDefaultOptions()
 
 Dialog.install = () => {
   Vue.use(EgoDialog)
+  // 添加全局API
+  Vue.prototype.$dialog = Dialog
 }
 
 // Dialog.Component = EgoDialog
-
-Vue.prototype.$dialog = Dialog
 
 export default Dialog

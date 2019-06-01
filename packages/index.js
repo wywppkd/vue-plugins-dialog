@@ -1,10 +1,10 @@
 /**
  * 整合所有的组件，对外导出，即一个完整的组件库
  *
- * 使用时
+ * 1.使用时
  * import Ego from 'ego' 一次引入所有组件
  *
- * 如果想要按需引入组件
+ * 2.如果想要按需引入组件
  * 可能需要安装babel-plugin-import插件
  * import {xxx,yyy} from 'ego' 引入指定的组件
  */
@@ -17,7 +17,8 @@ const components = [
   Dialog
 ]
 
-// 定义 install 方法，接收 Vue 作为参数。如果使用 use 注册插件，则所有的组件都将被注册
+// 定义 install 方法，接收 Vue 作为参数。
+// 所有组件components都将被注册为插件
 const install = function (Vue) {
   components.forEach(Component => {
     Vue.use(Component)
@@ -25,8 +26,9 @@ const install = function (Vue) {
 }
 
 export default {
-  // 导出的对象必须具有 install，才能被 Vue.use() 方法安装
+  // 导出的对象必须具有 install，Vue.use(Ego)会调用这个install方法
   install,
-  // 以下是具体的组件列表
+  // 以下是组件列表, 支持按需加载指定插件 import {componentName} from 'Ego' ,需要配合babel-plugin-import插件使用
+  // babel-plugin-import插件会将代码import {componentName} from 'Ego'转换成 => import Button from 'ego/lib/button'; import 'ego/lib/button/style';
   ...components
 }
