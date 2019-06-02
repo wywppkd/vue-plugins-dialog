@@ -1,9 +1,15 @@
 {
   "name": "ego-dialog",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "vue插件:alert, confirm弹框, 样式模拟iOS原生弹框",
   "main": "lib/ego-dialog.umd.min.js",
-  "keyword": ["vue","plugin","dialog","alert","confirm"],
+  "keywords": [
+    "vue",
+    "plugin",
+    "dialog",
+    "alert",
+    "confirm"
+  ],
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -27,5 +33,14 @@
     "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
   },
-  "license": "MIT"
+  "author": "wywppkd",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wywppkd/vue-plugins-dialog.git"
+  },
+  "bugs": {
+    "url": "https://github.com/wywppkd/vue-plugins-dialog/issues"
+  },
+  "homepage": "https://github.com/wywppkd"
 }

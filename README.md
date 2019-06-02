@@ -39,6 +39,6 @@
       console.log('取消')
     })
 
-    Vue.prototype.$dialog.setDefaultOptions(options) // 修改默认配置，对所有 Dialog 生效
-    Vue.prototype.$dialog.resetDefaultOptions(options) // 	重置默认配置，对所有 Dialog 生效
+    Vue.prototype.$dialog.setDefaultOptions(options)   // 修改默认配置，对所有 Dialog 生效
+    Vue.prototype.$dialog.resetDefaultOptions(options) // 重置默认配置，对所有 Dialog 生效
   ```
