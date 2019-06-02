@@ -68,12 +68,13 @@ Dialog.resetDefaultOptions = () => {
 }
 Dialog.resetDefaultOptions()
 
-Dialog.install = () => {
+// 这里install需要传入参数Vue,否则无法挂载到Vue原型上
+Dialog.install = (Vue) => {
   Vue.use(EgoDialog)
   // 添加全局API
   Vue.prototype.$dialog = Dialog
 }
 
-// Dialog.Component = EgoDialog
+Dialog.Component = EgoDialog
 
 export default Dialog

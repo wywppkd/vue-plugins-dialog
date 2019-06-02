@@ -19,7 +19,7 @@ const components = [
 
 // 定义 install 方法，接收 Vue 作为参数。
 // 所有组件components都将被注册为插件
-const install = function (Vue) {
+const install = (Vue) => {
   components.forEach(Component => {
     Vue.use(Component)
   })

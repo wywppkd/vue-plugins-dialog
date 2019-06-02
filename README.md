@@ -29,10 +29,10 @@
     this.$dialog.confirm({
       title: '你确定吗？你确定吗？你确定吗？',
       content: '再好好想想哦!',
-      confirmButtonText: '我确定',   // 默认'确定'
-      confirmButtonColor: '#333',    //默认'#2886d7'
-      cancelButtonColor: '我取消',   // 默认'取消'
-      cancelButtonColor: 'red'       //默认'#999'
+      confirmButtonText: '我确定',// 默认值: '确定'
+      confirmButtonColor: '#333',//默认值: '#2886d7'
+      cancelButtonColor: '我取消',// 默认值: '取消'
+      cancelButtonColor: 'red'//默认值: '#999'
     }).then(() => {
       console.log('确定')
     }).catch(() => {

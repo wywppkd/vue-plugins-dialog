@@ -1,9 +1,9 @@
 {
   "name": "ego-dialog",
-  "version": "0.0.1",
-  "description": "vue插件:alert,confirm弹框,样式同iOS原生弹框类似",
+  "version": "0.0.4",
+  "description": "vue插件:alert, confirm弹框, 样式模拟iOS原生弹框",
   "main": "lib/ego-dialog.umd.min.js",
-  "keyword": "vue plugin dialog alert confirm",
+  "keyword": ["vue","plugin","dialog","alert","confirm"],
   "private": false,
   "scripts": {
     "serve": "vue-cli-service serve",
