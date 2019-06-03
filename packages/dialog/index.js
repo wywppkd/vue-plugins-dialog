@@ -75,6 +75,7 @@ Dialog.install = (Vue) => {
   Vue.prototype.$dialog = Dialog
 }
 
+// 为了局部注册?
 Dialog.Component = EgoDialog
 
 export default Dialog
