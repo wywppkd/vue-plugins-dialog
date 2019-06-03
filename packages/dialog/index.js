@@ -76,6 +76,6 @@ Dialog.install = (Vue) => {
 }
 
 // 为了局部注册?
-Dialog.Component = EgoDialog
+// Dialog.Component = EgoDialog
 
 export default Dialog

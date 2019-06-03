@@ -1,6 +1,6 @@
 {
   "name": "ego-dialog",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "vue插件:alert, confirm弹框, 样式模拟iOS原生弹框",
   "main": "lib/ego-dialog.umd.min.js",
   "keywords": [
