@@ -6,15 +6,19 @@
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
+import HelloWorld from './components/HelloWorld.vue'
 export default {
-  data(){
+  data () {
     return {
 
     }
   },
-  components:{
+  components: {
     HelloWorld
+  },
+  created () {
+    this.$toast('hello', 10000)
+    this.$toast('heh', 30000)
   }
 }
 </script>
