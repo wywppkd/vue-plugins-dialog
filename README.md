@@ -20,19 +20,19 @@
       title: '支付失败',
       content: '请重试',
       confirmButtonText: '我知道了',
-      confirmButtonColor: 'red'
+      confirmButtonColor: '#fb3e44'
     }).then(() => {
       console.log('您点击了确定')
     })
 
   // 调用confirm弹框
     this.$dialog.confirm({
-      title: '你确定吗？你确定吗？你确定吗？',
+      title: '你确定吗？',
       content: '再好好想想哦!',
       confirmButtonText: '我确定',// 默认值: '确定'
       confirmButtonColor: '#333',//默认值: '#2886d7'
-      cancelButtonColor: '我取消',// 默认值: '取消'
-      cancelButtonColor: 'red'//默认值: '#999'
+      cancelButtonText: '我取消',// 默认值: '取消'
+      cancelButtonColor: '#fb3e44'//默认值: '#999'
     }).then(() => {
       console.log('确定')
     }).catch(() => {

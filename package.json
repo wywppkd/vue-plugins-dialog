@@ -1,6 +1,6 @@
 {
   "name": "ego-dialog",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "vue插件:alert, confirm弹框, 样式模拟iOS原生弹框",
   "main": "lib/ego-dialog.umd.min.js",
   "keywords": [
@@ -42,5 +42,5 @@
   "bugs": {
     "url": "https://github.com/wywppkd/vue-plugins-dialog/issues"
   },
-  "homepage": "https://github.com/wywppkd"
+  "homepage": "https://github.com/wywppkd/vue-plugins-dialog#README.md"
 }
